@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة واتساب بتأثير الزجاج الثلجي</title>
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- خط Inter (للقراءة الجيدة) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <!-- أيقونات Lucide (لاستخدام أيقونة الواتساب) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* الخط الأساسي والاتجاه */
+        body {
+            font-family: 'Inter', sans-serif;
+            direction: rtl;
+            background: linear-gradient(135deg, #1f074d, #0d001a, #074d44);
+            animation: gradient-shift 15s ease infinite;
+            background-size: 300% 300%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* تحريك الخلفية لتأثير المنشور/Iridescent */
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* تنسيق Glassmorphism/الزجاج المتجمد الأساسي */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15); /* شفافية خفيفة */
+            backdrop-filter: blur(15px); /* تأثير الزجاج المتجمد/Frosted Glass */
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* تأثير Neon Neumorphism خفيف على البطاقة */
+        .glass-card:hover {
+            box-shadow: 0 0 50px rgba(100, 255, 218, 0.5), 0 8px 40px 0 rgba(0, 0, 0, 0.5); /* إضاءة خفيفة بلون النيون */
+            transform: translateY(-5px) scale(1.02); /* تفاعل دقيق / Micro-interaction */
+        }
+
+        /* تنسيق زر الواتساب */
+        .whatsapp-button {
+            background-color: #25D366;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* تأثير التفاعل الدقيق عند الضغط/التحويم */
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+            transform: translateY(-2px) scale(1.05); /* حركة سلسة */
+        }
+        .whatsapp-button:active {
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 0 2px 10px rgba(37, 211, 102, 0.2);
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <!-- الحاوية المركزية للبطاقة الزجاجية -->
+    <div class="glass-card w-full max-w-sm p-6 md:p-10 rounded-3xl text-center text-white">
+
+        <!-- العنوان -->
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-shadow-lg" style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);">تواصل معي مباشرةً</h1>
+        <p class="mb-8 text-lg opacity-80">انقر على الزر أدناه لبدء محادثة واتساب الآن.</p>
+
+        <!-- الأيقونة الزجاجية الكبيرة -->
+        <div class="glass-card mx-auto mb-10 w-24 h-24 flex items-center justify-center rounded-full border-4 border-white border-opacity-30">
+            <!-- أيقونة الهاتف أو الرسالة بلون أبيض متلألئ -->
+            <svg class="w-12 h-12 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2m-4-0h-4a2 2 0 01-2-2v-6a2 2 0 012-2h4m2 10a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2a2 2 0 012-2h2a2 2 0 012 2v2zm-2-10h-2M7 16h2"></path>
+            </svg>
+        </div>
+
+        <!-- زر الواتساب (الرابط الفعلي) -->
+        <!-- الرابط يشير إلى الرقم 9647742851552 بدون الصفر المبدئي وبإضافة رمز الدولة -->
+        <a id="whatsappLink" href="https://wa.me/9647742851552" target="_blank" class="whatsapp-button inline-flex items-center justify-center w-full py-4 rounded-full text-xl font-semibold text-white uppercase tracking-wider hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-opacity-50">
+            <!-- أيقونة واتساب من مكتبة Lucide -->
+            <i data-lucide="send" class="w-6 h-6 ml-3"></i>
+            <span>إرسال رسالة واتساب</span>
+        </a>
+
+        <!-- عرض الرقم أسفل الزر -->
+        <p class="mt-6 text-sm opacity-70">الرقم المخصص: 07742851552</p>
+
+    </div>
+
+    <!-- تهيئة الأيقونات -->
+    <script>
+        // تهيئة أيقونات Lucide
+        lucide.createIcons();
+
+        // استخدام JavaScript لإضافة حركة بسيطة (محاكاة Framer Motion)
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.querySelector('.glass-card');
+
+            // محاكاة تأثير الـ "Prismatic Effect" و Micro-interaction عند حركة الماوس
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 20; // زاوية دوران طفيفة
+                const rotateY = (x - centerX) / 20;
+
+                // تطبيق دوران 3D خفيف على البطاقة
+                card.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+                card.style.transition = 'none'; // تعطيل Transition عند الحركة
+            });
+
+            card.addEventListener('mouseleave', () => {
+                // العودة إلى الحالة الأصلية بانتقال سلس
+                card.style.transition = 'all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            });
+        });
+    </script>
+</body>
+</html>
+
